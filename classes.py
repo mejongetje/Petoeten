@@ -1,15 +1,21 @@
+import random
+
 class Card:
-    def __init__(self, rank, suit, value, id):
-        CARDRANK = [y for y in str('TJQKA')]
+    def __init__(self, rank, suit, id):
+        CARDRANK = [x for x in str('TJQKA')]
         CARDSUIT = ['h','d','s','c']
 
         self.rank = rank
         self.suit = suit
         self.id = id
         self.name = f'{CARDRANK[rank]}{CARDSUIT[suit]}'
+        self.show = True
 
     def __repr__(self):
-        return self.name
+        if self.show == True:
+            return self.name
+        else:
+            return ' '
 
     def __iter__(self):
         return self
@@ -54,3 +60,15 @@ class Deck:
 
     def __iter__(self):
         return self
+
+
+class Board:
+    def __init__(self):
+        self.hand = []       
+        deck = Deck()
+        self.playdeck = deck.deck[:]
+        random.shuffle(self.playdeck)
+        for i in range(3):
+            self.hand.append(self.playdeck[i])
+            self.playdeck.remove(self.playdeck[i])
+        self.trump = self.playdeck[7]
