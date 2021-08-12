@@ -37,11 +37,11 @@ class Card:
            return self.__add__(other)
     
 
-    def __eq__(self, other):
-       if isinstance(other, Card):
-           return self.rank == other.rank         
-       else:
-           return False
+    # def __eq__(self, other):
+    #    if isinstance(other, Card):
+    #        return self.rank == other.rank         
+    #    else:
+    #        return False
    
 
 class Deck:
@@ -64,11 +64,36 @@ class Deck:
 
 class Board:
     def __init__(self):
-        self.hand = []       
+        self.hand = [[],[],[]]       
         deck = Deck()
         self.playdeck = deck.deck[:]
         random.shuffle(self.playdeck)
-        for i in range(3):
-            self.hand.append(self.playdeck[i])
-            self.playdeck.remove(self.playdeck[i])
-        self.trump = self.playdeck[7]
+        self.hand[0] = self.playdeck[0:9:3]
+        self.hand[1] = self.playdeck[1:9:3]
+        self.hand[2] = self.playdeck[2:9:3]
+        self.trump = self.playdeck[9:11]
+        self.playdeck[0:11] = []
+
+
+class Player:
+
+    players = []
+
+    def __init__(self, name, type='digital'):
+        self.name = name
+        self.type = type
+        self.bankroll = 100
+        self.hand = None
+        self.playcard = None
+        self.showcard = ' '
+        self.trickpoints = 0
+        self.dummycards = ['x']*3
+        __class__.players.append(self)
+        self.position = __class__.players.index(self)
+        self.hand_position = __class__.players.index(self)
+
+    def __repr__(self):
+        return self.name
+
+p1 = Player('Aunt Sheila')
+p2 = Player('Uncle Danny')
