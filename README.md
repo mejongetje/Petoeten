@@ -2,6 +2,8 @@
 
 command line card game (miniature cmd line game)
 
+![Alt text](http://full/path/to/img.jpg "Optional title")
+
 A GUI version of this game can be found at petoeten.com
 
 This is a program for the game Petoeten (pe-too-ten), also known as Zwikken or Zwicken.
