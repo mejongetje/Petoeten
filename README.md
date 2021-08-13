@@ -2,7 +2,7 @@
 
 command line card game (miniature cmd line game)
 
-![Alt text](http://full/path/to/img.jpg "Optional title")
+![Alt text](https://github.com/mejongetje/Petoeten-vs2/blob/master/play_action.png "Optional title")
 
 A GUI version of this game can be found at petoeten.com
 
