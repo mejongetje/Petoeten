@@ -2,6 +2,8 @@
 
 command line card game (miniature cmd line game)
 
+A GUI version of this game can be found at petoeten.com
+
 This is a program for the game Petoeten (pe-too-ten), also known as Zwikken or Zwicken.
 Petoeten was a notorious gambling game and at one time it was forbidden in the Habsburg Empire.
 Who doesn't remember those days...
